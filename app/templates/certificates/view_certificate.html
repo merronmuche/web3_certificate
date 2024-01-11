@@ -3,25 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Certificate</title>
-    <!-- Add any additional CSS or JS here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .certificate-image {
+            margin-top: 20px;
+            border: 3px solid #ddd;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Certificate of Completion</h1>
-        <p>Congratulations, {{ trainee_name }}!</p>
-        <p>You have successfully completed the challenge: {{ challenge_name }}.</p>
-        <p>Certificate ID (NFT): {{ nft_id }}</p>
+        <p>Congratulations, <strong>{{ trainee_name }}</strong>!</p>
+        <p>You have successfully completed the course: <strong>{{ course_name }}</strong>.</p>
+        <p>Certified Date: <strong>{{ certified_date }}</strong></p>
 
-        <!-- Additional information about the certificate or actions -->
-        <div>
-            <p>This certificate is verified on the Algorand Blockchain.</p>
-            <p><a href="{{ blockchain_url }}">View on Blockchain</a></p>
-        </div>
+        {% if certificate %}
+            <div class="certificate-image">
+                <img src="{{ certificate.url }}" alt="Certificate Image" style="max-width: 100%; height: auto;">
+            </div>
+        {% else %}
+            <p>Certificate image not available.</p>
+        {% endif %}
     </div>
-
-    <!-- JavaScript for any interactive components -->
-    <script type="text/javascript">
-        // JavaScript code can go here
-    </script>
 </body>
 </html>
