@@ -6,7 +6,8 @@ import { PROVIDER_ID, ProvidersArray, WalletProvider, useInitializeProviders, us
 import algosdk from 'algosdk'
 import { SnackbarProvider } from 'notistack'
 import { useState } from 'react'
-import AppCalls from './components/AppCalls'
+import AppCalls from './components/AppCalls';
+
 import ConnectWallet from './components/ConnectWallet'
 import { getAlgodConfigFromViteEnvironment } from './utils/network/getAlgoClientConfigs'
 
